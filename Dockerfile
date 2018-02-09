@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:ef9ef707038d
+FROM jupyter/minimal-notebook
 
 MAINTAINER Andrew Guidetti <andrew_Guidetti@hms.harvard.edu>
 
@@ -50,5 +50,3 @@ RUN Rscript -e 'source("http://bioconductor.org/biocLite.R")' -e 'biocLite("Vari
 RUN Rscript -e 'source("http://bioconductor.org/workflows.R")' -e 'workflowInstall("variants")'
 
 RUN Rscript -e 'library(devtools)' -e 'install_github("Gastrograph/RS3")'
-
-RUN Rscript -e 'devtools::install_github("hms-dbmi/Rcupcake", force = TRUE)'
